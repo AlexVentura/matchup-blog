@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="post-preview">
+        <div class="col-lg-4 col-sm-3 col-xs-3">
+            <%= image_tag article.cover.url(:thumb), class: 'img-circle img-responsive center-block img-circle' %>
+        </div>
+        <div class="col-lg-8 col-sm-9 col-xs-9">
+            <h2 class="post-title">
+                <%= link_to article.title, article %>
+            </h2>
+            <h3 class="post-subtitle">
+                <% truncate(article.body, length: 100) %>
+            </h3>
+            <p class="post-meta">Posted by <%= article.user.email %> on July 8, 2014</p>
+        </div>
+    </div>
+</div>
+<hr>

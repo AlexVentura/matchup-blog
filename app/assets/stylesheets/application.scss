@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * require_tree .
+ * require_self
+ */
+
+/* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables" */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "lmx-blog";
+@import "welcome";
+@import "comments";
+
+#notice_wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+
+	div {
+		font-size: 1.25rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+		margin: 0;
+		padding: 1rem 0;
+		text-align: center;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+
+		button {
+			left: -15px;
+			top: relative;
+		}
+	}
+}
+
+/*Barra Blog principal*/
+hr.small {
+    max-width: 100px;
+    margin: 15px auto;
+    border-width: 4px;
+    border-color: white;
+}
+
+/*Iconos footer*/
+p {
+    line-height: 1.5;
+    margin: 30px 0;
+    a {
+        text-decoration: underline;
+    }
+}
+/* Navbar */
+.navbar-custom {
+    font-family: 'Lato', sans-serif;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    .navbar-brand {
+        font-weight: 800;
+    }
+    .nav li a {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+}
+/* Footer */
+footer {
+    padding: 50px 0 65px;
+    .list-inline {
+        margin: 0;
+        padding: 0;
+    }
+    .copyright {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.postbody-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #404040;
+}
+
+.text-red {
+    color: red;
+}
+
+.img-circle {
+	height: 115px;
+	width: 120px;
+}

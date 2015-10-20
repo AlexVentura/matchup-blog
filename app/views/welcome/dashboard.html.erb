@@ -1,0 +1,40 @@
+<div class="container">
+	<br><br>
+	<h1>Articulos pendientes de Publicar</h1>
+	<br><br>
+
+	<% @articles.each do |article| %>
+		<% link_to article.title, article %>
+	    <% Sanitize.fragment(article.body, Sanitize::Config::RELAXED).html_safe %>
+	    <% link_to 'Eliminar', article, method: :delete, class: 'lmx-eliminar'  %>
+	    <% if article.may_publish? %>
+	        <% link_to 'Publicar', "/articles/#{article.id}/publish", method: :put, class: 'lmx-publicar'  %>
+	    <% end %>
+	<% end %>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="row">
+			<% @articles.each do |article| %>
+				<div class="col-lg-3">
+					<div class="thumbnail">
+						<img src="<%= article.cover.url %>" alt="">
+						<div class="caption">
+							<h5><%= link_to article.title, article %></h5>
+							<% bodysmall = Sanitize.fragment(article.body, Sanitize::Config::RELAXED).html_safe %>
+							<p><% Sanitize.fragment(article.body, Sanitize::Config::RELAXED).html_safe %></p>
+							<p><% truncate(bodysmall, length: 50) %></p>
+							<div>
+								<%= link_to 'Eliminar', article, method: :delete, class: 'btn btn-danger btn-xs', role: 'button' %>
+								<% if article.may_publish? %>
+									<%= link_to 'Publicar', "/articles/#{article.id}/publish", method: :put, class: 'btn btn-success btn-xs', role: 'button' %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</div>

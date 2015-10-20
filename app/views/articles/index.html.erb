@@ -1,0 +1,42 @@
+<%= render ('partials/index_front') %>
+
+<!-- Controles par acrear artículos -->
+<div class="container">
+<div class="row">
+    <br/>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <% if user_signed_in? and current_user.id == 1 %>
+        <%= link_to 'Crear Artículo', new_article_path, class: 'btn btn-warning' %>
+        <%= link_to 'Dashboard', '/dashboard', class: 'btn btn-warning' %>
+    <% end %>
+    </div>
+</div>
+</div>
+<hr>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+
+            <!-- Haciendolo con un parcial, el estilo que contenga es aplicado a cada elemento de la colección -->
+            <!-- El parcial debe llamarse como el recurso, en este caso espera un parcial llamado _article -->
+            <!-- ya que la colección es 'articles' el recurso es 'article' -->
+            <%= render @articles %>
+
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="top-space text-center">
+    <%= will_paginate @articles %>
+</div>
