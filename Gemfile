@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
 # GEMAS LenguajeMX
 gem 'devise'
 gem 'jquery-turbolinks'
@@ -33,14 +42,13 @@ gem 'epic-editor-rails'
 gem 'sanitize'
 gem 'bootstrap-sass', '~> 3.3.5'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Para Deploy
+group :development do
+	gem 'capistrano', '~> 3.4.0'
+	gem 'capistrano-bundler', '~> 1.1.4'
+	gem 'capistrano-rails', '~> 1.1.3'
+	gem 'capistrano-rvm', github: "capistrano/rvm"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
