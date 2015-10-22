@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_action :set_categories
 
+  # Para campo fullname en users
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   protected
 
   # Metodos para saber que tipo de usuario es, el usuario logeado
@@ -14,6 +17,11 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin!
       redirect_to root_path unless user_signed_in? && current_user.is_admin?
+  end
+
+  # Para permitir campo fullname en users
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :fullname
   end
 
   private

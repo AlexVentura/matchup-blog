@@ -9,14 +9,6 @@
  * Fondo: #dee1e3
  ----------------------------------*/
 
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 hr {
   margin: 30px auto 20px auto;
 }
@@ -30,11 +22,6 @@ ul {
   list-style-type: none;
 }
 
-body {
-  /*background: #dee1e3;*/
-  /*font-family: 'Lato', Arial, Helvetica, Sans-serif, Verdana !important;*/
-}
-
 /** ====================
  * Lista de Comentarios
  =======================*/
@@ -43,43 +30,10 @@ body {
   /*background: #dee1e3;*/
   margin: auto;
   padding: 0px;
-  width: 960px;
+  width: 100%;
   h1 a {
     font-size: 18px;
     font-weight: 700;
-  }
-}
-
-/*.comments-container h1 {
-	color: #283035;
-	font-size: 36px;
-	font-weight: 400;
-}*/
-
-.comments-list {
-  margin-top: 30px;
-  position: relative;
-  &:before {
-    background: #c7cacb;
-    content: '';
-    height: 100%;
-    left: 32px;
-    position: absolute;
-    top: 0;
-    width: 2px;
-  }
-  &:after {
-    background: #03658c;
-    border: 3px solid #c7cacb;
-    border-radius: 50%;
-    bottom: 0;
-    content: '';
-    height: 12px;
-    left: 27px;
-    position: absolute;
-    width: 12px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
   }
 }
 
@@ -87,69 +41,9 @@ body {
  * Lineas / Detalles
  -----------------------*/
 
-.reply-list {
-  &:before, &:after {
-    display: none;
-  }
-  li:before {
-    background: #c7cacb;
-    content: '';
-    height: 2px;
-    left: -55px;
-    position: absolute;
-    top: 25px;
-    width: 60px;
-  }
-}
-
-.comments-list li {
-  display: block;
-  margin-bottom: 15px;
-  position: relative;
-  &:after {
-    clear: both;
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
-  }
-}
-
-.reply-list {
-  clear: both;
-  margin-top: 15px;
-  padding-left: 88px;
-}
-
 /**
  * Avatar
  ---------------------------*/
-
-.comments-list .comment-avatar {
-  border: 3px solid #FFF;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  float: left;
-  height: 64px;
-  overflow: hidden;
-  position: relative;
-  width: 64px;
-  z-index: 99;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  img {
-    background: #d9edf7;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.reply-list .comment-avatar {
-  height: 50px;
-  width: 50px;
-}
 
 .comment-main-level:after {
   /*clear: both;
@@ -164,51 +58,18 @@ body {
  * Caja del Comentario
  ---------------------------*/
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0px;
-  text-transform: none;
-  letter-spacing: 1px;
-}
-
 /* Caja comentario */
 
 .comments-list .comment-box {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  float: right;
   position: relative;
-  width: 91%;
+  width: 100%;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
-  &:before, &:after {
-    border-color: transparent #03658c;
-    border-style: solid;
-    border-width: 10px 12px 10px 0;
-    content: '';
-    display: block;
-    height: 0;
-    left: -11px;
-    position: absolute;
-    top: 8px;
-    width: 0;
-  }
-  &:before {
-    border-color: transparent rgba(0, 0, 0, 0.05);
-    border-width: 11px 13px 11px 0;
-    left: -12px;
-  }
-}
-
-/* Flecha apuntando al avatar */
-
-/* Caja replica */
-
-.reply-list .comment-box {
-  width: 89%;
 }
 
 /* Encabezado del comentario */
-
 .comment-box {
   .comment-head {
     background: #d9edf7;
@@ -252,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     font-size: 13px;
     position: relative;
-    top: 1px;
+    top: 9px;
   }
   .comment-content {
     background: #FFF;
@@ -283,16 +144,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Iconos del encabezado */
-
-/* Link del nombre del autor del comentario */
-
-/* Fecha del comentario */
-
-/* Contenido del comentario */
-
-/* Etiqueta autor */
-
 /** =====================
  * Responsive
  ========================*/
@@ -300,13 +151,10 @@ h1, h2, h3, h4, h5, h6 {
   .comments-container {
     /*background: #dee1e3;*/
     padding: 0px;
-    width: 450px;
+    width: 500px;
   }
   .comments-list .comment-box {
     /*width: 380px;*/
     width: 80%;
-  }
-  .reply-list .comment-box {
-    width: 310px;
   }
 }

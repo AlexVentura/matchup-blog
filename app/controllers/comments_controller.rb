@@ -1,12 +1,18 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:update, :destroy]
   before_action :set_article
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   # POST /comments
   # POST /comments.json
   def create
-    @comment = current_user.comments.new(comment_params)
+    if user_signed_in?
+      @comment = current_user.comments.new(comment_params)
+    else
+      anonimousUser = User.find(2)
+      @comment = anonimousUser.comments.new(comment_params)
+    end
+    
     @comment.article = @article
 
     respond_to do |format|

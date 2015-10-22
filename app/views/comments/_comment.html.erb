@@ -2,14 +2,14 @@
 	<!-- Inicia padre - nivel 0 -->
 	<div class="comment-main-level">
 		<!-- Avatar -->
-		<div class="comment-avatar"><img src="<%= comment.user.avatar %>" alt=""></div>
+		<!-- <div class="comment-avatar"><img src="<%= comment.user.avatar %>" alt=""></div> -->
 		<!-- Contenedor del Comentario -->
 		<div class="comment-box">
 			<div class="comment-head">
 				<% if @article.user_id == comment.user_id %>
-					<h6 class="comment-name by-author"><%= comment.user.email %></h6>
+					<h6 class="comment-name by-author"><%= comment.user.fullname %></h6>
 				<% else %>
-					<h6 class="comment-name"><%= comment.user.email %></h6>
+					<h6 class="comment-name"><%= comment.user.fullname %></h6>
 				<% end %>
 				<span>Hace <%= time_ago_in_words(comment.created_at) %></span>
 				<i><%= link_to '', [@article, comment], class: 'fa fa-times fa-lg text-red' %></i>

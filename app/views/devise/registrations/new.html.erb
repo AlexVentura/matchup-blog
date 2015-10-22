@@ -6,12 +6,21 @@
             <h2 class="text-center">Registrarse</h2>
             <br><br>
 
+            <% unless User.all.count >= 2 %>
+                puts "No debe verse la pagina"
+            
+
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f| %>
                 <%= devise_error_messages! %>
 
                 <div class="field form-group">
+                    <%= f.label :fullname, 'Nombre completo' %><br />
+                    <%= f.text_field :fullname, autofocus: true, class: 'form-control' %>
+                </div>
+
+                <div class="field form-group">
                     <%= f.label :email, 'Correo electronico' %><br />
-                    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                    <%= f.email_field :email, class: 'form-control' %>
                 </div>
 
                 <div class="field form-group">
@@ -30,6 +39,8 @@
                 <div class="form-group actions">
                     <%= f.submit "Crear cuenta", class: 'btn btn-primary' %>
                 </div>
+            <% end %>
+
             <% end %>
 
             <div class="actions">
