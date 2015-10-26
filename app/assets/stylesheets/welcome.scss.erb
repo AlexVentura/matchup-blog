@@ -3,5 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .lmx-background {
-	background-image: url(/assets/home-bg.jpg);
+	/* Esto no funciona en producción, solo en desarrollo.
+	background-image: url(/assets/home-bg.jpg);*/
+	background-image: url(<%= asset_path 'home-bg.jpg' %>);
 }
