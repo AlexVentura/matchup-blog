@@ -25,11 +25,11 @@
                     <label>Portada:</label>
                     <%= f.file_field :cover %>
                 </div>
+
                 <div class="field form-group">
-                    <%= f.hidden_field :body, placeholder: 'Contenido del articulo', style: 'height:250px;', class: 'form-control', id: 'body-textarea' %>
-                    <%= f.hidden_field :markup_body, id: 'markup-body-textarea' %>
-                    <div id="epiceditor" style="height:350px;"></div>
+                    <%= f.text_area :body, placeholder: 'Contenido del artículo', style: 'height:250px;', class: 'form-control', id: 'wysihtml5s' %>
                 </div>
+
                 <div class="field form-group">
                     <label>Categorias:</label>
                     <% @categories.each do |category| %>
@@ -42,22 +42,6 @@
                     <%= f.submit 'Guardar', class: 'btn btn-primary' %>
                 </div>
             <% end %>
-
-            <script type="text/javascript">
-                var editor = new EpicEditor({
-                    textarea: 'markup-body-textarea',
-                    file: {
-                        name: 'nuevo_articulo'
-                    }
-                });
-
-                editor.load();
-
-                $('#articles_form').on('submit', function(){
-                    $('#body-textarea').val( editor.exportFile('nuevo_articulo', 'html') );
-                    $('#markup-body-textarea').val( editor.exportFile('nuevo_articulo') );
-                });
-            </script>
         </div>
     </div>
 </div>

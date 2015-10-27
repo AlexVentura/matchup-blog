@@ -38,7 +38,7 @@ gem 'jquery-turbolinks'
 gem 'paperclip'
 gem 'aasm'
 gem 'will_paginate'
-gem 'epic-editor-rails'
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
 gem 'sanitize'
 gem 'bootstrap-sass', '~> 3.3.5'
 

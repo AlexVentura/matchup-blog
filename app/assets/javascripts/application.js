@@ -14,7 +14,8 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require epiceditor
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/es-ES
 //= require_tree .
 
 // Para desaparecer las notificaciones y alertas
@@ -25,3 +26,12 @@ $(document).ready(function () {
         })
     }, 5000);
 });
+
+// wysihtml5 editor for body post
+$(document).ready(function(){
+
+    $('#wysihtml5s').each(function(i, elem) {
+        $(elem).wysihtml5();
+    });
+
+})

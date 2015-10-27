@@ -40,7 +40,8 @@
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 postbody-text">
-                <%= Sanitize.fragment(@article.body, Sanitize::Config::RELAXED).html_safe %>
+                <% Sanitize.fragment(@article.body, Sanitize::Config::RELAXED).html_safe %>
+                <%= @article.body.html_safe %>
             </div>
         </div>
         <div class="row">
