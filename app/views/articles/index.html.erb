@@ -5,7 +5,7 @@
 <div class="row">
     <br/>
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <% if user_signed_in? and current_user.id == 1 %>
+    <% if user_signed_in? and (current_user.id == 1 or  current_user.id == 3) %>
         <%= link_to 'Crear Artículo', new_article_path, class: 'btn btn-warning' %>
         <%= link_to 'Dashboard', '/dashboard', class: 'btn btn-warning' %>
     <% end %>
