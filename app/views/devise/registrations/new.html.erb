@@ -6,9 +6,7 @@
             <h2 class="text-center">Registrarse</h2>
             <br><br>
 
-            <% unless User.all.count >= 2 %>
-                puts "No debe verse la pagina"
-            
+            <% unless User.all.count >= 3 %>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f| %>
                 <%= devise_error_messages! %>
