@@ -26,12 +26,3 @@ $(document).ready(function () {
         })
     }, 5000);
 });
-
-// wysihtml5 editor for body post
-$(document).ready(function(){
-
-    $('#wysihtml5s').each(function(i, elem) {
-        $(elem).wysihtml5();
-    });
-
-})
