@@ -1,3 +1,8 @@
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 10px;
+    height: 55px;
+    padding: 5px 0px 0px 0px;
+}
 .intro-header {
     background-color: #808080;
     background: no-repeat center center;
@@ -77,6 +82,23 @@
             }
         }
     }
+
+    .intro-header {
+        .site-heading, .post-heading, .page-heading {
+            padding: 150px 0;
+        }
+    }
+
+    .intro-header {
+        .site-heading h1, .page-heading h1 {
+            font-size: 80px;
+        }
+    }
+
+    img .navbar-brand {
+        
+    }
+
 }
 
 @media only screen and (min-width: 1170px) {
@@ -96,8 +118,8 @@
             /* when the user scrolls down, we hide the header right above the viewport */
             position: fixed;
             top: -61px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-bottom: 1px solid #f2f2f2;
+            background-color: rgba(108, 108, 108, 1);
+            border-bottom: 1px solid #6C6C6C;
             -webkit-transition: -webkit-transform 0.3s;
             -moz-transition: -moz-transform 0.3s;
             transition: transform 0.3s;
@@ -108,9 +130,9 @@
                 }
             }
             .nav li a {
-                color: #404040;
+                color: #fff;
                 &:hover, &:focus {
-                    color: #0085a1;
+                    color: #fff;
                 }
             }
         }
@@ -121,20 +143,6 @@
             -ms-transform: translate3d(0, 100%, 0);
             -o-transform: translate3d(0, 100%, 0);
             transform: translate3d(0, 100%, 0);
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .intro-header {
-        .site-heading, .post-heading, .page-heading {
-            padding: 150px 0;
-        }
-    }
-
-    .intro-header {
-        .site-heading h1, .page-heading h1 {
-            font-size: 80px;
         }
     }
 }
